@@ -1,0 +1,237 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+  background-color: rgb(145, 57, 116);
+    letter-spacing: 4px;
+    height: 70px;
+ 
+   
+  }
+
+  .navbar li a {
+    color:white ;
+    font-family: cursive;
+    font-size: 17px;
+    margin-top: 12px;
+  }
+
+ li a:hover{
+   color: red;
+   transition: all 2s;
+ }
+
+  .navbar-brand {
+    color: white;
+    margin-top: 12px;
+  }
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  width: 100%;
+  margin: auto;
+  height: 500px;
+  object-fit: cover;
+}
+.col-sm-6{
+    color: white;
+}
+.container{
+    width: 100%;
+    height: 600px;
+    background-image: url("./reatau.jpg");
+    background-size: 100% 100%;
+}
+.center-box1{
+    width: 30%;
+    height: 400px;
+    background-color:rgb(166, 62, 197);
+    position: absolute;
+    top: 25%;
+    left: 60%;
+    padding-top: 30px;
+}
+.center-box2{
+    width: 30%;
+    height: 500px;
+    background-color: rgb(166, 62, 197);
+    position: absolute;
+   
+    left: 60%;
+    top: 15%;
+    display: flex;
+    align-items: center;
+}
+.cai{
+  height: 40px;
+  width: 100px;
+  background-color: rgb(43, 226, 64);
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+  margin-left: 70px;
+  margin-bottom: 20px;
+}
+
+.imgsecond{
+    width: 35vh;
+    height: 30vh;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px snow;
+   
+   margin-top: 30px;
+   margin-left: 50px;
+
+}
+.imgsecond:hover{
+  transform: scale(1.1);
+  transition: all 2s;
+}
+.card{
+  height: 300px;
+  width: 400px;
+  background-color: red;
+}
+.img1{
+background-color: gainsboro;
+
+}
+
+.btn btn-primary{
+  margin-left: 50px;
+}
+.foot{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(145, 57, 116);
+    color: white;
+    text-align: center;
+    font-family: cursive;
+}
+.main-btn{
+  height: 30px;
+  width: 60px;
+  background-color: crimson;
+  padding: 10px;
+  color: white;
+border-bottom-left-radius: 17px;
+}
+.btn{
+  background-color: rgb(145, 57, 116);
+  color: white;
+  padding: 10px;
+}
+.btn:hover{
+color: white;
+  background-color: rgb(94, 20, 69);
+  transition: all 1s;
+}
+.form_conatainer{
+
+
+
+  
+  height: 100vh;
+  width: 100%;
+  margin-top: 100px;
+
+
+}
+.container-con{
+  width: 100%;
+  height: 600px;
+  background-image: url("./fr.jpg");
+  background-size: 100% 100%;
+}
+.im{
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: 13%;
+}
+.container1{
+  height: 500px;
+  width: 100%;
+  
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c{
+  margin-left: 60px;
+  padding: 5px;
+  width: 90px;
+  background-color: rgb(29, 29, 99);
+  color: white;
+  border-radius: 12px;
+}
+.p{
+  margin-left: 60px;
+}
+.ca{
+  height: 40px;
+  width: 100px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+}
+.bt1{
+  height: 60px;
+  width: 200px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  border-radius: 12px;
+}
+.ca:hover{
+  background-color: red;
+}
+.form{
+  font-size: 20px;
+  color: white;
+  font-family: cursive;
+}
+.container2{
+  height: 400px;
+  width: 500px;
+  background-color: aquamarine;
+  margin: auto;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  padding-left: 20px;
+  
+}
+.container3{
+  background-color: brown;
+  width: 100%;
+  height: 600px;
+}
+.bt{
+  width: 300px;
+  height: 40px;
+  margin-top: 10px;
+  position: absolute;
+  left: 100px;
+  border-radius: 12px;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+}
+.container4{
+  width: 300px;
+  height: 300px;
+  background-color: aquamarine;
+}
+.form-control{
+  border: 2px solid rgb(75, 8, 8);
+  background-color: transparent;
+  color: white;
+}
+.form-control:hover{
+
+  cursor: pointer;
+}

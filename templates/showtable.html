@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+ 
+</head>
+<body style="background-color: rgb(136, 37, 37);">
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Online Food Order</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/a">AdminLogin</a></li>
+          <li><a href="/r">RestaurantRegistration</a></li>
+          <li><a href="/i">AddItems</a></li>
+          <li><a href="/s">show</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+      <div class="form_conatainer">
+
+
+        <div style="width: 100%; margin-left: 20%;">
+
+            <div class="bg" style="width: 50%; text-align: center; background-color: aliceblue;">
+
+                <form action="/search" method="post">
+                    <div class="mb-3">
+                      <label for="se" class="form-label" style="color: red;">Enter any values Search</label><br>
+                   <input type="text" name="se"  style="padding: 5px; width: 50%;" class="sc">
+                   <input type="submit" value="search" class="main-btn">
+                   <a href="/showdata" class="main-btn">All</a>
+        
+                  </form> 
+
+                </div>
+           
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Item Id</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>img</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+       {% for i in  item %}            
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}} </td>
+        <td><img src="{{url_for('static',filename='upl/' +i[4])}}" alt="" style="height: 60px;"></td>
+
+
+        
+        <td><a href="/del?Id={{i[0]}}"  class="main-btn">Delet</a></td>
+        <td><a href="/edit?Id={{i[0]}}" class="main-btn">Edit</a></td>
+        
+        
+                     </tr>
+                 {% endfor %}    
+        
+                   
+                    </tbody>
+                  </table>
+           
+           
+            </div>
+          </div>
+        
+      </div>
+
+    
+</body>
+</html>

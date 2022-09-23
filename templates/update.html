@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+
+</head>
+<body>
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Online Food Order</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/a"></a>AdminLogin</li>
+          <li><a href="/r">RestaurantRegistration</a></li>
+          <li><a href="/i">Items</a></li>
+          <li><a href="#pricing">AboutUs</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <div class="container">
+        
+        <div class="center-box2">
+            <form action="/alter" method="post" enctype="multipart/form-data">
+                <hr>
+                <label for="t1"> Id:</label>
+                <input type="text" name="Id" value="{{data1[0]}}"><br>
+                <br>
+                <label for="t2">Name:</label>
+                <input type="text" name="Name" value="{{data1[1]}}"><br>
+                <br>
+                <label for="t3">Price:</label>
+                <input type="text" name="Price" value="{{data1[2]}}"><br>
+                <br>
+                <label for="t4">Description:</label>
+               <textarea name="desc" cols="30" rows="10" value="{{data1[3]}}">{{data1[3]}}</textarea>
+                <br>
+                
+              
+            
+                <input type="submit" value="save"> 
+            </form>
+        </div>
+      </div>
+
+      <div>
+
+      </div>
+
+      
+</body>
+</html>

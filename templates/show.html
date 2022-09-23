@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+ 
+</head>
+<body style="background-color: rgb(136, 37, 37);">
+    
+
+
+
+      <div class="form_conatainer">
+
+
+        <div style="width: 100%; margin-left: 20%;">
+
+            <div class="bg" style="width: 50%; text-align: center; background-color: aliceblue;">
+
+                <form action="/search" method="post">
+                    <div class="mb-3">
+            
+                  
+        
+                  </form> 
+
+                </div>
+           
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>FullName</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Zipcode</th>
+                        <th>date</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <tr> 
+        {% for i in  item %} 
+        
+        
+        <td>{{i[0]}}</td>
+        <td>{{i[1]}}</td>
+        <td>{{i[2]}}</td>
+        <td>{{i[3]}}</td>
+        <td>{{i[4]}}</td>
+        <td>{{i[5]}}</td>
+        <td>{{i[11]}}</td>
+
+
+
+        
+  
+        
+        
+                     </tr>
+                 
+         {% endfor %} 
+                   
+                    </tbody>
+                  </table>
+           
+           
+            </div>
+          </div>
+        
+      </div>
+
+    
+</body>
+</html>

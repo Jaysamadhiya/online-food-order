@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+       <h1 style="color: white; font-size: 1.9rem;">On<span style="color: rgb(31, 140, 31);">li</span>ne Fo<span style="color: green;">o</span>od Order</h1>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/a">AdminLogin</a></li>
+        
+      
+            {% if session.UserName  %}
+            <li><a href="/logout">Logout</a></li>   
+            {% else %} 
+            <li><a href="/ul">UserLogin</a></li> 
+            
+            {% endif %}
+
+            <li><a href="#">Welcome {{session["UserName"]}}</a></li>
+             
+          </ul>
+        </div>
+       </div>
+    </nav>
+    <br>
+    <br>
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+    
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+          <div class="carousel-caption">
+           
+          </div>
+    
+          <div class="item active">
+            <h1 style="margin-top: 15vh; position: absolute; margin-left: 17%; color: crimson; font-weight: bold;">Upto 50% Off</h1>
+<a href="/cart"><button type="submit"  style="margin-top: 25vh; position: absolute; margin-left: 20%; padding: 10px; width: 10%;" class="btn" >ShopNow</button></a>
+            <img src="{{url_for('static',filename='food.jpg')}}" alt="Chania" width="460" height="345">
+            <div class="carousel-caption">
+               
+            </div>
+          </div>
+    
+          <div class="item">
+            <h1 style="margin-top: 15vh; position: absolute; margin-left: 17%; color: crimson; font-weight: bold;">Upto 50% Off</h1>
+            <a href="/cart"><button type="submit"  style="margin-top: 25vh; position: absolute; margin-left: 20%; padding: 10px; width: 10%;" class="btn" >ShopNow</button></a>
+            <img src="{{url_for('static',filename='food1.jpg')}}" alt="Chania" width="460" height="345">
+            <div class="carousel-caption">
+              
+            </div>
+          </div>
+        
+          <div class="item">
+            <h1 style="margin-top: 15vh; position: absolute; margin-left: 17%; color: crimson; font-weight: bold;">Upto 50% Off</h1>
+            <a href="/cart"><button type="submit"  style="margin-top: 25vh; position: absolute; margin-left: 20%; padding: 10px; width: 10%;" class="btn" >ShopNow</button></a>
+            <img src="{{url_for('static',filename='food2.jpg')}}" alt="Flower" width="460" height="345">
+            <div class="carousel-caption">
+              
+            </div>                                                                  
+          </div>
+    
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      
+
+    </div>
+
+        
+        <div class="row container-fluid img1 ">
+          {% for i in item %}
+          <div class="col-sm-3 ">
+            <img class="imgsecond" src="{{url_for('static',filename='upl/'+i[4])}}" alt="err" >
+            <h3 class="p" style="color:red ; font-family: cursive;">{{i[1]}} </h3>
+
+
+            <p class="p" style="color:palevioletred; font-size: 22px;">price:{{i[2]}} ®️</p>
+            <span class="p" style="color: blue; font-size: 15px;">{{i[3]}}</span>
+            <div class="input-group-btn">
+              <a href="/cart?id={{i[0]}}"class="btn" style="left: 20%;">Order Now</a>
+            </div>
+
+          </div>
+
+            {% endfor %}
+    
+          </div>
+      <br>
+          <div class="container-fluid foot">
+                <div class="row">
+                    <div class="col-md-4 f">
+                       <h2>Online food Order</h2>
+                       <p>Online Food ordering system is a process in which one can order various foods and beverages from some local restaurant and hotels through the use of internet, just by sitting at home or any place. And the order is delivered to the told location.</p>
+                    </div>
+                    <div class="col-md-4">
+                      <h2 style="text-decoration: underline;">Contact Us</h2>
+                      <p><i class="fa fa-phone"> 09977699568</i></p>
+                      <p><i class="fa fa-envelope"> shrishti@123.gmail.com</i></p>
+                    </div>
+                    <div class="col-md-4">
+                       <h2>Subscribe our Newsletter</h2>
+                       <div class="row">
+                        <div class="col-sm-8">
+                       <input type="email" name="email" class="form-control">
+                        </div>
+                        <div class="col-md-4">
+                       <button class="btn btn-info">Submit</button>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+          </div>
+
+
+          
+
+
+      
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+
+    {% block head %} {% endblock %}
+</head>
+<body>
+  <nav class="navbar navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Online Food Order</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/a">AdminLogin</a></li>
+          <li><a href="/r">RestaurantRegistration</a></li>
+          <li><a href="/i">Items</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+      <div class="container">
+        
+        <div class="center-box2">
+            <form action="/item" method="post" enctype="multipart/form-data">
+                <label class="form" for="t1"> Id:</label>
+                <input type="text" name="t1"><br>
+                <br>
+                <label class="form" for="t2">Name:</label>
+                <input type="text" name="t2"><br>
+                <br>
+                <label class="form" for="t3">Price:</label>
+                <input type="text" name="t3"><br>
+                <br>
+                <label class="form" for="t4">Description:</label>
+               <textarea name="t4" cols="30" rows="10"></textarea>
+                <br>
+                
+              
+            <input type="file" name="file1"/>
+                <label class="form" for="file1">Image:</label>
+                <br>
+                <input type="submit" value="save" class="cai"> 
+            </form>
+        </div>
+      </div>
+
+      <div>
+        {% block content %} {% endblock %}
+      </div>
+
+      
+</body>
+</html>
